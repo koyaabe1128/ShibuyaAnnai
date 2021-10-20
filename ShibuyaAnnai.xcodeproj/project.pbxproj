@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		AB6203C1271FB39D001D254A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203C0271FB39D001D254A /* AppDelegate.swift */; };
 		AB6203C3271FB39D001D254A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203C2271FB39D001D254A /* SceneDelegate.swift */; };
-		AB6203C5271FB39D001D254A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203C4271FB39D001D254A /* ViewController.swift */; };
 		AB6203C8271FB39D001D254A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6203C6271FB39D001D254A /* Main.storyboard */; };
 		AB6203CA271FB3A6001D254A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6203C9271FB3A6001D254A /* Assets.xcassets */; };
 		AB6203CD271FB3A6001D254A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6203CB271FB3A6001D254A /* LaunchScreen.storyboard */; };
 		AB6203D8271FB3A7001D254A /* ShibuyaAnnaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203D7271FB3A7001D254A /* ShibuyaAnnaiTests.swift */; };
 		AB6203E3271FB3A7001D254A /* ShibuyaAnnaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203E2271FB3A7001D254A /* ShibuyaAnnaiUITests.swift */; };
+		AB6203FA271FB784001D254A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203F9271FB784001D254A /* SearchViewController.swift */; };
+		AB6203FF271FB7A3001D254A /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203FE271FB7A3001D254A /* ExitViewController.swift */; };
+		AB620404271FB8CC001D254A /* Exit.csv in Resources */ = {isa = PBXBuildFile; fileRef = AB620403271FB8CC001D254A /* Exit.csv */; };
+		AB62040A271FCBFF001D254A /* AccessibleDstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 		AB6203BD271FB39D001D254A /* ShibuyaAnnai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShibuyaAnnai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6203C0271FB39D001D254A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB6203C2271FB39D001D254A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB6203C4271FB39D001D254A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB6203C7271FB39D001D254A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB6203C9271FB3A6001D254A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB6203CC271FB3A6001D254A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		AB6203DE271FB3A7001D254A /* ShibuyaAnnaiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShibuyaAnnaiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6203E2271FB3A7001D254A /* ShibuyaAnnaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShibuyaAnnaiUITests.swift; sourceTree = "<group>"; };
 		AB6203E4271FB3A7001D254A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB6203F9271FB784001D254A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AB6203FE271FB7A3001D254A /* ExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
+		AB620403271FB8CC001D254A /* Exit.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Exit.csv; sourceTree = "<group>"; };
+		AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleDstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,10 @@
 		AB6203B4271FB39D001D254A = {
 			isa = PBXGroup;
 			children = (
+				AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */,
+				AB6203F9271FB784001D254A /* SearchViewController.swift */,
+				AB6203FE271FB7A3001D254A /* ExitViewController.swift */,
+				AB620403271FB8CC001D254A /* Exit.csv */,
 				AB6203BF271FB39D001D254A /* ShibuyaAnnai */,
 				AB6203D6271FB3A7001D254A /* ShibuyaAnnaiTests */,
 				AB6203E1271FB3A7001D254A /* ShibuyaAnnaiUITests */,
@@ -101,7 +111,6 @@
 			children = (
 				AB6203C0271FB39D001D254A /* AppDelegate.swift */,
 				AB6203C2271FB39D001D254A /* SceneDelegate.swift */,
-				AB6203C4271FB39D001D254A /* ViewController.swift */,
 				AB6203C6271FB39D001D254A /* Main.storyboard */,
 				AB6203C9271FB3A6001D254A /* Assets.xcassets */,
 				AB6203CB271FB3A6001D254A /* LaunchScreen.storyboard */,
@@ -231,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB620404271FB8CC001D254A /* Exit.csv in Resources */,
 				AB6203CD271FB3A6001D254A /* LaunchScreen.storyboard in Resources */,
 				AB6203CA271FB3A6001D254A /* Assets.xcassets in Resources */,
 				AB6203C8271FB39D001D254A /* Main.storyboard in Resources */,
@@ -258,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB6203C5271FB39D001D254A /* ViewController.swift in Sources */,
+				AB62040A271FCBFF001D254A /* AccessibleDstViewController.swift in Sources */,
+				AB6203FF271FB7A3001D254A /* ExitViewController.swift in Sources */,
+				AB6203FA271FB784001D254A /* SearchViewController.swift in Sources */,
 				AB6203C1271FB39D001D254A /* AppDelegate.swift in Sources */,
 				AB6203C3271FB39D001D254A /* SceneDelegate.swift in Sources */,
 			);
