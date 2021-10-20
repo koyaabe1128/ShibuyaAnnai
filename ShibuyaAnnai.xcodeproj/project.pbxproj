@@ -85,10 +85,8 @@
 		AB6203B4271FB39D001D254A = {
 			isa = PBXGroup;
 			children = (
-				AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */,
-				AB6203F9271FB784001D254A /* SearchViewController.swift */,
-				AB6203FE271FB7A3001D254A /* ExitViewController.swift */,
-				AB620403271FB8CC001D254A /* Exit.csv */,
+				AB62041527207624001D254A /* View */,
+				AB62040E271FEEB1001D254A /* Seed */,
 				AB6203BF271FB39D001D254A /* ShibuyaAnnai */,
 				AB6203D6271FB3A7001D254A /* ShibuyaAnnaiTests */,
 				AB6203E1271FB3A7001D254A /* ShibuyaAnnaiUITests */,
@@ -135,6 +133,24 @@
 				AB6203E4271FB3A7001D254A /* Info.plist */,
 			);
 			path = ShibuyaAnnaiUITests;
+			sourceTree = "<group>";
+		};
+		AB62040E271FEEB1001D254A /* Seed */ = {
+			isa = PBXGroup;
+			children = (
+				AB620403271FB8CC001D254A /* Exit.csv */,
+			);
+			path = Seed;
+			sourceTree = "<group>";
+		};
+		AB62041527207624001D254A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB6203F9271FB784001D254A /* SearchViewController.swift */,
+				AB6203FE271FB7A3001D254A /* ExitViewController.swift */,
+				AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

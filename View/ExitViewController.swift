@@ -7,7 +7,8 @@
 
 import UIKit
 
-var exitAry: [String] = []
+// CSVファイルの一行が一要素として入る
+var objectAry: [String] = []
 var selectedCellData: [String] = []
 
 class ExitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -24,17 +25,24 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         do {
             let csvString = try String(contentsOfFile: csvBundle, encoding: String.Encoding.utf8)
-            exitAry = csvString.components(separatedBy: .newlines)
-            exitAry.removeLast()
+            objectAry = csvString.components(separatedBy: .newlines)
+            objectAry.removeLast()
         } catch {
             print("エラー")
         }
+        // テスト
+//        var test: [String] = exitAry[8].components(separatedBy: ",")
+//        if test[2] == "Exitで表示する" {
+//            print(test[0])
+//        } else {
+//            print("非表示にする")
+//        }
         
     }
     
     // 選択されたセルのデータを配列にして代入
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectedCellData = exitAry[indexPath.row].components(separatedBy: ",")
+        selectedCellData = objectAry[indexPath.row].components(separatedBy: ",")
     }
     
     // セグエが"toAccessibleDstSegue"の時、AccessibleDstViewControllerの変数received に選択されたデータを代入
@@ -46,13 +54,13 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exitAry.count
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exitCell", for: indexPath)
-        let exitInfo = exitAry[indexPath.row].components(separatedBy: ",")
-        cell.textLabel!.text = exitInfo[1]
+        let exitInfo = objectAry[indexPath.row].components(separatedBy: ",")
+        cell.textLabel!.text = exitInfo[0]
         return cell
     }
     
