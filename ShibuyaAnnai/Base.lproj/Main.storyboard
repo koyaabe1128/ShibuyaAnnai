@@ -23,7 +23,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WlX-Oo-Bq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-701" y="-1233"/>
+            <point key="canvasLocation" x="-701" y="-1266"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tx2-bU-a8Y">
@@ -40,7 +40,47 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yft-mj-6G7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-701" y="-536"/>
+            <point key="canvasLocation" x="-701" y="-567"/>
+        </scene>
+        <!--目的地を選択-->
+        <scene sceneID="jwb-77-Bfd">
+            <objects>
+                <viewController id="Z2o-eM-yS2" customClass="DstViewController" customModule="ShibuyaAnnai" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GCW-iV-tqC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ptM-kH-3UP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dstCell" id="Lfv-Se-blx">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lfv-Se-blx" id="Lta-QX-AEk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ngc-Pc-iyi" kind="show" identifier="DstToDstDetailSegue" id="Dh8-ek-wzP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z2o-eM-yS2" id="hGA-X8-lMf"/>
+                                    <outlet property="delegate" destination="Z2o-eM-yS2" id="rWt-uw-OiM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GcA-qc-YSs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="目的地を選択" id="0y6-jx-03I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvh-j3-nN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1607.2463768115942" y="857.8125"/>
         </scene>
         <!--出口を選択-->
         <scene sceneID="lqU-l3-Tuz">
@@ -168,11 +208,21 @@
                                     <segue destination="Q4q-XF-nVD" kind="show" id="zEs-qo-Gs4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-31-6tj">
+                                <rect key="frame" x="184" y="280" width="46" height="30"/>
+                                <state key="normal" title="目的地"/>
+                                <connections>
+                                    <segue destination="Z2o-eM-yS2" kind="show" id="9Lz-RU-uDp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cik-qx-WmO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PLH-tN-4F0" firstAttribute="centerY" secondItem="iDf-ZE-CfM" secondAttribute="centerY" id="Q7J-BZ-Hm2"/>
+                            <constraint firstItem="cik-qx-WmO" firstAttribute="trailing" secondItem="4aZ-31-6tj" secondAttribute="trailing" constant="184" id="cnC-BO-lo8"/>
+                            <constraint firstItem="4aZ-31-6tj" firstAttribute="top" secondItem="cik-qx-WmO" secondAttribute="top" constant="192" id="e7m-sO-jbM"/>
+                            <constraint firstItem="4aZ-31-6tj" firstAttribute="leading" secondItem="cik-qx-WmO" secondAttribute="leading" constant="184" id="fOa-oX-Nex"/>
                             <constraint firstItem="PLH-tN-4F0" firstAttribute="centerX" secondItem="iDf-ZE-CfM" secondAttribute="centerX" id="xAY-BG-shA"/>
                         </constraints>
                     </view>
@@ -180,9 +230,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRE-95-bSE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-701" y="163"/>
+            <point key="canvasLocation" x="-701" y="128"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dh8-ek-wzP"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">

@@ -1,11 +1,9 @@
 import UIKit
 
-class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var received: [String] = []
-    var accessibleDstAry: [String] = []
-    var accessibleDstAllData: [String] = []
-    var selectedData: [String] = []
+    var hoge: [String] = []
+    var selectedCellData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,38 +22,36 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
             print("エラー")
         }
         
-        // CSVファイルの列をカンマ区切りで割って前画面で選択された[0]と同じ値を持つ目的地名を変数accessibleDstAryに入れる
+        // ソートしてみた
         for row in csvAry {
             let object = row.components(separatedBy: ",")
-            if object[0] == received[0] {
-                accessibleDstAry.append(row)
-            }
+            hoge.append(object[1])
         }
-        // しっかり値が渡されているか確認
-        print(accessibleDstAry)
+//        print(hoge.sorted())
         
     }
     
     // 選択されたセルのデータを入れる
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectedData = accessibleDstAry[indexPath.row].components(separatedBy: ",")
+        selectedCellData = csvAry[indexPath.row].components(separatedBy: ",")
+//        print(selectedCellData)
     }
     
-    // セグエが"toDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
+    // セグエが"DstToDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDstDetailSegue" {
+        if segue.identifier == "DstToDstDetailSegue" {
             let dstDetailVC = segue.destination as! DstDetailViewController
-            dstDetailVC.received = selectedData
+            dstDetailVC.received = selectedCellData
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accessibleDstAry.count
+        return csvAry.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "accessibleDstCell", for: indexPath)
-        let dstInfo = accessibleDstAry[indexPath.row].components(separatedBy: ",")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dstCell", for: indexPath)
+        let dstInfo = csvAry[indexPath.row].components(separatedBy: ",")
         cell.textLabel!.text = dstInfo[1]
         return cell
     }

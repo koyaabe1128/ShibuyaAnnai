@@ -13,4 +13,8 @@ class DstDetailViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        dstName.text = received[1]
+    }
+    
 }
