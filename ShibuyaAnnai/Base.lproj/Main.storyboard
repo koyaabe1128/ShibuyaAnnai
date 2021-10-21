@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKX-GL-6J8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KtA-Ht-3QQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,23 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="ODb-IE-6DJ">
-            <objects>
-                <tabBarController id="nKX-GL-6J8" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zng-ne-mT7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="KtA-Ht-3QQ" kind="relationship" relationship="viewControllers" id="5XQ-gF-yYG"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WlX-Oo-Bq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-701" y="-1266"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tx2-bU-a8Y">
             <objects>
@@ -54,9 +37,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="tRT-SG-hzR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dstCell" id="Lfv-Se-blx">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lfv-Se-blx" id="Lta-QX-AEk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -77,6 +66,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="目的地を選択" id="0y6-jx-03I"/>
+                    <connections>
+                        <outlet property="dstTableView" destination="ptM-kH-3UP" id="cu5-Lb-Lcq"/>
+                        <outlet property="searchBar" destination="tRT-SG-hzR" id="SXV-yJ-Omf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvh-j3-nN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,6 +87,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="exitCell" id="mbf-Rz-102">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -117,6 +111,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="出口を選択" id="djd-4p-ogN"/>
+                    <connections>
+                        <outlet property="exitTableView" destination="TAm-eU-Gf7" id="w2N-H6-KJD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8A-2y-NG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,6 +162,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="accessibleDstCell" id="5VG-XM-iyi">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -188,6 +186,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="アクセスがいい場所" id="nxf-vQ-5Ot"/>
+                    <connections>
+                        <outlet property="accessibleDstTableView" destination="UUJ-s2-3dE" id="ALA-mW-Tu7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZe-NZ-jZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,29 +202,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-tN-4F0">
-                                <rect key="frame" x="191.5" y="433" width="31" height="30"/>
-                                <state key="normal" title="出口"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-tN-4F0" customClass="CustomButton" customModule="ShibuyaAnnai" customModuleProvider="target">
+                                <rect key="frame" x="20" y="234" width="374" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="qJj-G8-SFK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="出口">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="Q4q-XF-nVD" kind="show" id="zEs-qo-Gs4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-31-6tj">
-                                <rect key="frame" x="184" y="280" width="46" height="30"/>
-                                <state key="normal" title="目的地"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="何から探しますか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6Y-r4-j71">
+                                <rect key="frame" x="20" y="108" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-31-6tj" customClass="CustomButton" customModule="ShibuyaAnnai" customModuleProvider="target">
+                                <rect key="frame" x="20" y="149" width="374" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="ecP-4Q-PGp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="目的地">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="Z2o-eM-yS2" kind="show" id="9Lz-RU-uDp"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cik-qx-WmO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="PLH-tN-4F0" firstAttribute="centerY" secondItem="iDf-ZE-CfM" secondAttribute="centerY" id="Q7J-BZ-Hm2"/>
-                            <constraint firstItem="cik-qx-WmO" firstAttribute="trailing" secondItem="4aZ-31-6tj" secondAttribute="trailing" constant="184" id="cnC-BO-lo8"/>
-                            <constraint firstItem="4aZ-31-6tj" firstAttribute="top" secondItem="cik-qx-WmO" secondAttribute="top" constant="192" id="e7m-sO-jbM"/>
-                            <constraint firstItem="4aZ-31-6tj" firstAttribute="leading" secondItem="cik-qx-WmO" secondAttribute="leading" constant="184" id="fOa-oX-Nex"/>
-                            <constraint firstItem="PLH-tN-4F0" firstAttribute="centerX" secondItem="iDf-ZE-CfM" secondAttribute="centerX" id="xAY-BG-shA"/>
+                            <constraint firstItem="4aZ-31-6tj" firstAttribute="top" secondItem="w6Y-r4-j71" secondAttribute="bottom" constant="20" id="3kA-Pf-H32"/>
+                            <constraint firstItem="w6Y-r4-j71" firstAttribute="leading" secondItem="cik-qx-WmO" secondAttribute="leading" constant="20" id="83P-2s-xgd"/>
+                            <constraint firstItem="PLH-tN-4F0" firstAttribute="leading" secondItem="cik-qx-WmO" secondAttribute="leading" constant="20" id="JxR-P3-udp"/>
+                            <constraint firstItem="cik-qx-WmO" firstAttribute="trailing" secondItem="4aZ-31-6tj" secondAttribute="trailing" constant="20" id="SYj-dY-nUb"/>
+                            <constraint firstItem="PLH-tN-4F0" firstAttribute="top" secondItem="4aZ-31-6tj" secondAttribute="bottom" constant="20" id="Usb-eF-Y02"/>
+                            <constraint firstItem="4aZ-31-6tj" firstAttribute="leading" secondItem="cik-qx-WmO" secondAttribute="leading" constant="20" id="fDN-L8-GAd"/>
+                            <constraint firstItem="w6Y-r4-j71" firstAttribute="top" secondItem="cik-qx-WmO" secondAttribute="top" constant="20" id="jNW-WC-YAG"/>
+                            <constraint firstItem="cik-qx-WmO" firstAttribute="trailing" secondItem="PLH-tN-4F0" secondAttribute="trailing" constant="20" id="q6x-4t-UGK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="渋谷駅案内" id="vU8-Zk-MrT"/>
@@ -240,6 +262,9 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

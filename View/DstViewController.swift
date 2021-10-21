@@ -1,12 +1,21 @@
 import UIKit
 
-class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    @IBOutlet weak var dstTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var hoge: [String] = []
     var selectedCellData: [String] = []
+    var test: [String] = []
+    var test2: [String] = []
+    var results: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.backButtonDisplayMode = .minimal
+        
+        searchBar.delegate = self
         
         // CSVファイルがない時にコンソールに出力
         guard let csvBundle = Bundle.main.path(forResource:"Exit", ofType:"csv") else {
@@ -22,19 +31,36 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             print("エラー")
         }
         
-        // ソートしてみた
         for row in csvAry {
-            let object = row.components(separatedBy: ",")
-            hoge.append(object[1])
+            _ = row.components(separatedBy: ",")
+            test.append(row)
         }
-//        print(hoge.sorted())
+        print(test)
         
+        results = test
+        
+    }
+    
+    // 検索バーに書き込みがあった時に呼び出される
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+            results = test.filter { dstName in
+                return dstName.contains(searchText)
+            } as Array
+        } else {
+            results = test
+        }
+        dstTableView.reloadData()
+    }
+    
+    // 検索を押した時にキーボードを閉じる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
     
     // 選択されたセルのデータを入れる
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectedCellData = csvAry[indexPath.row].components(separatedBy: ",")
-//        print(selectedCellData)
+        selectedCellData = results[indexPath.row].components(separatedBy: ",")
     }
     
     // セグエが"DstToDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
@@ -46,14 +72,18 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return csvAry.count
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dstCell", for: indexPath)
-        let dstInfo = csvAry[indexPath.row].components(separatedBy: ",")
+        let dstInfo = results[indexPath.row].components(separatedBy: ",")
         cell.textLabel!.text = dstInfo[1]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
 }

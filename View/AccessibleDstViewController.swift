@@ -1,14 +1,16 @@
 import UIKit
 
 class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var accessibleDstTableView: UITableView!
     
     var received: [String] = []
     var accessibleDstAry: [String] = []
-    var accessibleDstAllData: [String] = []
     var selectedData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.backButtonDisplayMode = .minimal
         
         // CSVファイルがない時にコンソールに出力
         guard let csvBundle = Bundle.main.path(forResource:"Exit", ofType:"csv") else {
@@ -58,6 +60,10 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
         let dstInfo = accessibleDstAry[indexPath.row].components(separatedBy: ",")
         cell.textLabel!.text = dstInfo[1]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
 }

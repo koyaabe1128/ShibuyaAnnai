@@ -4,12 +4,15 @@ import UIKit
 var csvAry: [String] = []
 
 class ExitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var exitTableView: UITableView!
     
     var showExitAry: [String] = []
     var selectedCellData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.backButtonDisplayMode = .minimal
         
         // CSVファイルがない時にコンソールに出力
         guard let csvBundle = Bundle.main.path(forResource:"Exit", ofType:"csv") else {
@@ -58,6 +61,10 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "exitCell", for: indexPath)
         cell.textLabel!.text = showExitAry[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
 }

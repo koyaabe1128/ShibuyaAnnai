@@ -8,6 +8,8 @@ class DstDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backButtonDisplayMode = .minimal
+        
         print(received)
         print(received[1])
 
