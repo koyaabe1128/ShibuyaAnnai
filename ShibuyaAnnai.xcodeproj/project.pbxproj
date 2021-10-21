@@ -18,6 +18,7 @@
 		AB6203FF271FB7A3001D254A /* ExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6203FE271FB7A3001D254A /* ExitViewController.swift */; };
 		AB620404271FB8CC001D254A /* Exit.csv in Resources */ = {isa = PBXBuildFile; fileRef = AB620403271FB8CC001D254A /* Exit.csv */; };
 		AB62040A271FCBFF001D254A /* AccessibleDstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */; };
+		AB62041A27213722001D254A /* DstDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62041927213722001D254A /* DstDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AB6203FE271FB7A3001D254A /* ExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitViewController.swift; sourceTree = "<group>"; };
 		AB620403271FB8CC001D254A /* Exit.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Exit.csv; sourceTree = "<group>"; };
 		AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleDstViewController.swift; sourceTree = "<group>"; };
+		AB62041927213722001D254A /* DstDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DstDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				AB6203F9271FB784001D254A /* SearchViewController.swift */,
 				AB6203FE271FB7A3001D254A /* ExitViewController.swift */,
 				AB620409271FCBFF001D254A /* AccessibleDstViewController.swift */,
+				AB62041927213722001D254A /* DstDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				AB6203FA271FB784001D254A /* SearchViewController.swift in Sources */,
 				AB6203C1271FB39D001D254A /* AppDelegate.swift in Sources */,
 				AB6203C3271FB39D001D254A /* SceneDelegate.swift in Sources */,
+				AB62041A27213722001D254A /* DstDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

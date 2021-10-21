@@ -82,6 +82,37 @@
             </objects>
             <point key="canvasLocation" x="-701.44927536231887" y="858.48214285714278"/>
         </scene>
+        <!--詳細-->
+        <scene sceneID="AP9-Xx-yKL">
+            <objects>
+                <viewController id="Ngc-Pc-iyi" customClass="DstDetailViewController" customModule="ShibuyaAnnai" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k60-OA-5Kw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKE-1v-Do3">
+                                <rect key="frame" x="20" y="108" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LZB-lA-spC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tKE-1v-Do3" firstAttribute="top" secondItem="LZB-lA-spC" secondAttribute="top" constant="20" id="3NK-Aw-qEn"/>
+                            <constraint firstItem="tKE-1v-Do3" firstAttribute="leading" secondItem="LZB-lA-spC" secondAttribute="leading" constant="20" id="5vt-FC-TMU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="詳細" id="GKb-hY-81z"/>
+                    <connections>
+                        <outlet property="dstName" destination="tKE-1v-Do3" id="dVa-VO-dUz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="put-bx-rJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1607.2463768115942" y="2278.7946428571427"/>
+        </scene>
         <!--アクセスがいい場所-->
         <scene sceneID="Gri-kg-SDu">
             <objects>
@@ -102,6 +133,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ngc-Pc-iyi" kind="show" identifier="toDstDetailSegue" id="Yfd-em-oYV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

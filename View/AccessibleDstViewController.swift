@@ -4,6 +4,8 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
     
     var received: [String] = []
     var accessibleDstAry: [String] = []
+    var accessibleDstAllData: [String] = []
+    var selectedData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +28,24 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
         for row in csvAry {
             let object = row.components(separatedBy: ",")
             if object[0] == received[0] {
-                accessibleDstAry.append(object[1])
+                accessibleDstAry.append(row)
             }
         }
         // しっかり値が渡されているか確認
         print(accessibleDstAry)
         
+    }
+    
+    // 選択されたセルのデータを入れる
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        selectedData = accessibleDstAry[indexPath.row].components(separatedBy: ",")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDstDetailSegue" {
+            let dstDetailVC = segue.destination as! DstDetailViewController
+            dstDetailVC.received = selectedData
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +54,8 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "accessibleDstCell", for: indexPath)
-        cell.textLabel!.text = accessibleDstAry[indexPath.row]
+        let dstInfo = accessibleDstAry[indexPath.row].components(separatedBy: ",")
+        cell.textLabel!.text = dstInfo[1]
         return cell
     }
     
