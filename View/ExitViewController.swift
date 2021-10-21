@@ -1,18 +1,12 @@
-//
-//  ExitViewController.swift
-//  ShibuyaAnnai
-//
-//  Created by Koya on 2021/10/20.
-//
-
 import UIKit
 
 // CSVファイルの一行が一要素として入る
-var objectAry: [String] = []
-var selectedCellData: [String] = []
+var csvAry: [String] = []
 
 class ExitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var showExitAry: [String] = []
+    var selectedCellData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,24 +19,27 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         do {
             let csvString = try String(contentsOfFile: csvBundle, encoding: String.Encoding.utf8)
-            objectAry = csvString.components(separatedBy: .newlines)
-            objectAry.removeLast()
+            csvAry = csvString.components(separatedBy: .newlines)
+            csvAry.removeLast()
         } catch {
             print("エラー")
         }
-        // テスト
-//        var test: [String] = exitAry[8].components(separatedBy: ",")
-//        if test[2] == "Exitで表示する" {
-//            print(test[0])
-//        } else {
-//            print("非表示にする")
-//        }
         
+        // CSVファイルの列をカンマ区切りで割って[0]がshowとなっている出口名を変数showExitAryに入れる
+        for row in csvAry {
+            let object = row.components(separatedBy: ",")
+            if object[2] == "show" {
+                showExitAry.append(object[0])
+            }
+        }
+        // しっかり値が渡されている確認する
+        print(showExitAry)
+ 
     }
     
     // 選択されたセルのデータを配列にして代入
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectedCellData = objectAry[indexPath.row].components(separatedBy: ",")
+        selectedCellData = csvAry[indexPath.row].components(separatedBy: ",")
     }
     
     // セグエが"toAccessibleDstSegue"の時、AccessibleDstViewControllerの変数received に選択されたデータを代入
@@ -54,13 +51,12 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return showExitAry.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exitCell", for: indexPath)
-        let exitInfo = objectAry[indexPath.row].components(separatedBy: ",")
-        cell.textLabel!.text = exitInfo[0]
+        cell.textLabel!.text = showExitAry[indexPath.row]
         return cell
     }
     

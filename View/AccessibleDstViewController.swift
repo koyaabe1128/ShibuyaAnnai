@@ -1,10 +1,3 @@
-//
-//  AccessibleDstViewController.swift
-//  ShibuyaAnnai
-//
-//  Created by Koya on 2021/10/20.
-//
-
 import UIKit
 
 class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -23,19 +16,20 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
         
         do {
             let csvString = try String(contentsOfFile: csvBundle, encoding: String.Encoding.utf8)
-            objectAry = csvString.components(separatedBy: .newlines)
-            objectAry.removeLast()
+            csvAry = csvString.components(separatedBy: .newlines)
+            csvAry.removeLast()
         } catch {
             print("エラー")
         }
         
         // CSVファイルの列をカンマ区切りで割って前画面で選択された[0]と同じ値を持つ目的地名を変数accessibleDstAryに入れる
-        for row in objectAry {
+        for row in csvAry {
             let object = row.components(separatedBy: ",")
             if object[0] == received[0] {
                 accessibleDstAry.append(object[1])
             }
         }
+        // しっかり値が渡されているか確認
         print(accessibleDstAry)
         
     }
