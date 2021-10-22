@@ -4,10 +4,10 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var dstTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var hoge: [String] = []
+    var dstName: [String] = []
+    var selectedDataAry: [String] = []
+    var selectedDataString: String = ""
     var selectedCellData: [String] = []
-    var test: [String] = []
-    var test2: [String] = []
     var results: [String] = []
     
     override func viewDidLoad() {
@@ -31,24 +31,23 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             print("エラー")
         }
         
+   
         for row in csvAry {
-            _ = row.components(separatedBy: ",")
-            test.append(row)
+            let object = row.components(separatedBy: ",")
+            dstName.append(object[1])
         }
-        print(test)
-        
-        results = test
-        
+        results = dstName
     }
     
+
     // 検索バーに書き込みがあった時に呼び出される
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
-            results = test.filter { dstName in
-                return dstName.contains(searchText)
+            results = dstName.filter { object in
+                return object.contains(searchText)
             } as Array
         } else {
-            results = test
+            results = dstName
         }
         dstTableView.reloadData()
     }
@@ -60,7 +59,13 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     // 選択されたセルのデータを入れる
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectedCellData = results[indexPath.row].components(separatedBy: ",")
+        // resultsには目的地名しか入ってないので、csvAryにフィルターをかけて一列分のデータを変数selectedDataAryに入れる
+        selectedDataAry = csvAry.filter { row in
+            return row.contains(results[indexPath.row])
+        }
+        // 配列だとseparatedByが使えないので文字列に変換する
+        selectedDataString = selectedDataAry.joined(separator: ",")
+        selectedCellData = selectedDataString.components(separatedBy: ",")
     }
     
     // セグエが"DstToDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
@@ -77,8 +82,8 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dstCell", for: indexPath)
-        let dstInfo = results[indexPath.row].components(separatedBy: ",")
-        cell.textLabel!.text = dstInfo[1]
+        
+        cell.textLabel!.text = results[indexPath.row]
         return cell
     }
     
