@@ -34,7 +34,7 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
         // しっかり値が渡されているか確認
-        print(accessibleDstAry)
+//        print(accessibleDstAry)
         
     }
     

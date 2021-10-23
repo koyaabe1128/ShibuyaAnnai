@@ -32,17 +32,18 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
         for row in csvAry {
             let object = row.components(separatedBy: ",")
             if object[2] == "show" {
-                showExitAry.append(object[0])
+                showExitAry.append(row)
             }
         }
         // しっかり値が渡されている確認する
-        print(showExitAry)
+//        print(showExitAry)
  
     }
     
     // 選択されたセルのデータを配列にして代入
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectedCellData = csvAry[indexPath.row].components(separatedBy: ",")
+        selectedCellData = showExitAry[indexPath.row].components(separatedBy: ",")
+        print(selectedCellData)
     }
     
     // セグエが"toAccessibleDstSegue"の時、AccessibleDstViewControllerの変数received に選択されたデータを代入
@@ -59,7 +60,8 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exitCell", for: indexPath)
-        cell.textLabel!.text = showExitAry[indexPath.row]
+        let exitInfo = showExitAry[indexPath.row].components(separatedBy: ",")
+        cell.textLabel!.text = exitInfo[0]
         return cell
     }
     
