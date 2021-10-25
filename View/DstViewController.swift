@@ -4,6 +4,7 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var dstTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var csvAry: [String] = []
     var dstName: [String] = []
     var selectedDataAry: [String] = []
     var selectedDataString: String = ""
@@ -18,7 +19,7 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         searchBar.delegate = self
         
         // CSVファイルがない時にコンソールに出力
-        guard let csvBundle = Bundle.main.path(forResource:"Exit", ofType:"csv") else {
+        guard let csvBundle = Bundle.main.path(forResource:"DstDetail", ofType:"csv") else {
             print("csvファイルがありません。")
             return
         }
@@ -34,9 +35,10 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
    
         for row in csvAry {
             let object = row.components(separatedBy: ",")
-            dstName.append(object[1])
+            dstName.append(object[0])
         }
-        results = dstName
+        results = dstName.sorted()
+        
     }
     
 
@@ -47,7 +49,7 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 return object.contains(searchText)
             } as Array
         } else {
-            results = dstName
+            results = dstName.sorted()
         }
         dstTableView.reloadData()
     }
@@ -63,9 +65,13 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         selectedDataAry = csvAry.filter { row in
             return row.contains(results[indexPath.row])
         }
+        
         // 配列だとseparatedByが使えないので文字列に変換する
-        selectedDataString = selectedDataAry.joined(separator: ",")
+//        print(selectedDataAry)
+        selectedDataString = selectedDataAry.joined()
+//        print(selectedDataString)
         selectedCellData = selectedDataString.components(separatedBy: ",")
+//        print(selectedCellData)
     }
     
     // セグエが"DstToDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
@@ -82,9 +88,12 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dstCell", for: indexPath)
-        
         cell.textLabel!.text = results[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

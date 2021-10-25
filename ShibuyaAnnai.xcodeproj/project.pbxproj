@@ -21,6 +21,8 @@
 		AB62041A27213722001D254A /* DstDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62041927213722001D254A /* DstDetailViewController.swift */; };
 		AB62042227214B99001D254A /* DstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62042127214B99001D254A /* DstViewController.swift */; };
 		AB62042B27216FF3001D254A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62042A27216FF3001D254A /* CustomButton.swift */; };
+		AB81D1422726FC1400E89640 /* Dst.csv in Resources */ = {isa = PBXBuildFile; fileRef = AB81D1412726FC1400E89640 /* Dst.csv */; };
+		AB81D14F272706D600E89640 /* DstDetail.csv in Resources */ = {isa = PBXBuildFile; fileRef = AB81D14E272706D600E89640 /* DstDetail.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		AB62041927213722001D254A /* DstDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DstDetailViewController.swift; sourceTree = "<group>"; };
 		AB62042127214B99001D254A /* DstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DstViewController.swift; sourceTree = "<group>"; };
 		AB62042A27216FF3001D254A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		AB81D1412726FC1400E89640 /* Dst.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dst.csv; sourceTree = "<group>"; };
+		AB81D14E272706D600E89640 /* DstDetail.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = DstDetail.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				AB620403271FB8CC001D254A /* Exit.csv */,
+				AB81D1412726FC1400E89640 /* Dst.csv */,
+				AB81D14E272706D600E89640 /* DstDetail.csv */,
 			);
 			path = Seed;
 			sourceTree = "<group>";
@@ -266,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB620404271FB8CC001D254A /* Exit.csv in Resources */,
+				AB81D14F272706D600E89640 /* DstDetail.csv in Resources */,
+				AB81D1422726FC1400E89640 /* Dst.csv in Resources */,
 				AB6203CD271FB3A6001D254A /* LaunchScreen.storyboard in Resources */,
 				AB6203CA271FB3A6001D254A /* Assets.xcassets in Resources */,
 				AB6203C8271FB39D001D254A /* Main.storyboard in Resources */,

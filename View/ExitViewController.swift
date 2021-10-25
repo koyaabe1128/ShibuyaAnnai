@@ -1,12 +1,9 @@
 import UIKit
 
-// CSVファイルの一行が一要素として入る
-var csvAry: [String] = []
-
 class ExitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var exitTableView: UITableView!
     
-    var showExitAry: [String] = []
+    var csvAry: [String] = []
     var selectedCellData: [String] = []
     
     override func viewDidLoad() {
@@ -27,23 +24,12 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
         } catch {
             print("エラー")
         }
-        
-        // CSVファイルの列をカンマ区切りで割って[0]がshowとなっている出口名を変数showExitAryに入れる
-        for row in csvAry {
-            let object = row.components(separatedBy: ",")
-            if object[2] == "show" {
-                showExitAry.append(row)
-            }
-        }
-        // しっかり値が渡されている確認する
-//        print(showExitAry)
  
     }
     
     // 選択されたセルのデータを配列にして代入
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        selectedCellData = showExitAry[indexPath.row].components(separatedBy: ",")
-        print(selectedCellData)
+        selectedCellData = csvAry[indexPath.row].components(separatedBy: ",")
     }
     
     // セグエが"toAccessibleDstSegue"の時、AccessibleDstViewControllerの変数received に選択されたデータを代入
@@ -55,14 +41,17 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return showExitAry.count
+        return csvAry.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exitCell", for: indexPath)
-        let exitInfo = showExitAry[indexPath.row].components(separatedBy: ",")
-        cell.textLabel!.text = exitInfo[0]
+        cell.textLabel!.text = csvAry[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
