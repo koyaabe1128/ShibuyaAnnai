@@ -37,7 +37,7 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             let object = row.components(separatedBy: ",")
             dstName.append(object[0])
         }
-        results = dstName.sorted()
+        results = dstName
         
     }
     
@@ -49,7 +49,7 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 return object.contains(searchText)
             } as Array
         } else {
-            results = dstName.sorted()
+            results = dstName
         }
         dstTableView.reloadData()
     }

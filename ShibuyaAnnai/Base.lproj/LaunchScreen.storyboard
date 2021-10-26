@@ -4,43 +4,59 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ピン" translatesAutoresizingMaskIntoConstraints="NO" id="S0C-Uz-6w8">
-                                <rect key="frame" x="137" y="378" width="140" height="140"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="0wO-Ox-StN"/>
-                                    <constraint firstAttribute="height" constant="140" id="2Py-4B-vu4"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adp-yQ-nzJ">
+                                <rect key="frame" x="144.5" y="433.5" width="125" height="29.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="渋">
+                                        <attributes>
+                                            <color key="NSColor" red="0.22398987436899576" green="1" blue="0.2312015923866908" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="25" name="YuGo-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="谷駅">
+                                        <attributes>
+                                            <color key="NSColor" red="0.29927826087541476" green="0.38902474492540506" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="25" name="YuGo-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="案">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0019415035407346348" green="1" blue="0.039243404871962539" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="25" name="YuGo-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="内">
+                                        <attributes>
+                                            <color key="NSColor" red="0.29927826087541476" green="0.38902474492540506" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="25" name="YuGo-Medium"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="S0C-Uz-6w8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="23J-7M-qmN"/>
-                            <constraint firstItem="S0C-Uz-6w8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="O1A-9q-ojz"/>
+                            <constraint firstItem="adp-yQ-nzJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8NG-Ok-pa5"/>
+                            <constraint firstItem="adp-yQ-nzJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="U4A-hh-QJM"/>
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ピン" width="1280" height="1280"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

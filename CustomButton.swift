@@ -14,6 +14,11 @@ class CustomButton: UIButton {
     }
 
     func customDesign() {
+        
+//        let image = UIImage(named: "dst.png")
+//        self.setBackgroundImage(image, for: .normal)
+        
+        
         self.layer.cornerRadius = 7
         self.layer.backgroundColor = UIColor.white.cgColor
         self.layer.shadowColor = UIColor.black.cgColor
