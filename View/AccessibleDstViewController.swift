@@ -30,8 +30,8 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
         // CSVファイルの列をカンマ区切りで割って前画面で選択された[0]と同じ値を持つ目的地名を変数accessibleDstAryに入れる
         for row in csvAry {
             let object = row.components(separatedBy: ",")
-            if object[1] == received[0] {
-                accessibleDstAry.append(object[0])
+            if object[0] == received[0] {
+                accessibleDstAry.append(object[1])
             }
         }
         

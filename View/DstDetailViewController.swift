@@ -38,7 +38,7 @@ class DstDetailViewController: UIViewController {
             }
         }
         
-        print(received)
+//        print(received)
         
         // タイトル
         dstName.text = dstDetail[0]
