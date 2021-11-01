@@ -5,7 +5,7 @@ class DstDetailViewController: UIViewController {
     @IBOutlet weak var dstImage: UIImageView!
     @IBOutlet weak var dstName2: UILabel!
     @IBOutlet weak var dstExit: UILabel!
-    @IBOutlet weak var dstAdress: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     var csvAry: [String] = []
     var received: [String] = []
@@ -38,8 +38,6 @@ class DstDetailViewController: UIViewController {
             }
         }
         
-//        print(received)
-        
         // タイトル
         dstName.text = dstDetail[0]
         
@@ -53,9 +51,15 @@ class DstDetailViewController: UIViewController {
         // 目的地に近い出口名
         dstExit.text = dstDetail[1]
         
-        // 目的地の住所
-        dstAdress.text = dstDetail[0]
+        backButton.layer.cornerRadius = 25
         
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
     
 }

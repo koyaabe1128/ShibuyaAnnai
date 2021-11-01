@@ -8,15 +8,22 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.barTintColor = UIColor.systemGreen
-        navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemGreen
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = .white
         navigationItem.backButtonDisplayMode = .minimal
         
+        
+        //        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
     }
-
+    
 }
