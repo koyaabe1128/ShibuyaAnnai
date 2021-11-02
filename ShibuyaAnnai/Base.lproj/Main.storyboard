@@ -276,25 +276,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLH-tN-4F0" customClass="CustomButton" customModule="ShibuyaAnnai" customModuleProvider="target">
-                                <rect key="frame" x="20" y="193" width="374" height="65"/>
+                                <rect key="frame" x="20" y="178" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="qJj-G8-SFK"/>
+                                    <constraint firstAttribute="height" constant="50" id="qJj-G8-SFK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="出口">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="出口から探す">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Q4q-XF-nVD" kind="show" id="zEs-qo-Gs4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-31-6tj" customClass="CustomButton" customModule="ShibuyaAnnai" customModuleProvider="target">
-                                <rect key="frame" x="20" y="108" width="374" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-31-6tj" customClass="CustomButton" customModule="ShibuyaAnnai" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="ecP-4Q-PGp"/>
+                                    <constraint firstAttribute="height" constant="50" id="ecP-4Q-PGp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="目的地">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="目的地から探す">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>

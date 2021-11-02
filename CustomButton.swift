@@ -19,8 +19,9 @@ class CustomButton: UIButton {
 
     func customDesign() {
         
-        self.layer.cornerRadius = 15
-        self.layer.backgroundColor = UIColor.white.cgColor
+        self.layer.cornerRadius = 25
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.layer.backgroundColor = UIColor.systemYellow.cgColor
         self.layer.shadowColor = UIColor.black.cgColor
         // 影の方向
         self.layer.shadowOffset = CGSize(width: 0, height: 0)

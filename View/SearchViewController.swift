@@ -21,9 +21,6 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationItem.backButtonDisplayMode = .minimal
         
-        
-        //        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
     }
     
 }

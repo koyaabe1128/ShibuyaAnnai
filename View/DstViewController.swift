@@ -67,11 +67,8 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
         // 配列だとseparatedByが使えないので文字列に変換する
-//        print(selectedDataAry)
         selectedDataString = selectedDataAry.joined()
-//        print(selectedDataString)
         selectedCellData = selectedDataString.components(separatedBy: ",")
-//        print(selectedCellData)
     }
     
     // セグエが"DstToDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
