@@ -41,8 +41,6 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
-
-    // 検索バーに書き込みがあった時に呼び出される
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             results = dstName.filter { object in
@@ -54,12 +52,10 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         dstTableView.reloadData()
     }
     
-    // 検索を押した時にキーボードを閉じる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
     }
     
-    // 選択されたセルのデータを入れる
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         // resultsには目的地名しか入ってないので、csvAryにフィルターをかけて一列分のデータを変数selectedDataAryに入れる
         selectedDataAry = csvAry.filter { row in
@@ -71,7 +67,6 @@ class DstViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         selectedCellData = selectedDataString.components(separatedBy: ",")
     }
     
-    // セグエが"DstToDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DstToDstDetailSegue" {
             let dstDetailVC = segue.destination as! DstDetailViewController

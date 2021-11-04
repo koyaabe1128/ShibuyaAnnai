@@ -27,7 +27,6 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
             print("エラー")
         }
         
-        // CSVファイルの列をカンマ区切りで割って前画面で選択された[0]と同じ値を持つ目的地名を変数accessibleDstAryに入れる
         for row in csvAry {
             let object = row.components(separatedBy: ",")
             if object[0] == received[0] {
@@ -37,12 +36,10 @@ class AccessibleDstViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
-    // 選択されたセルのデータを入れる
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         selectedCellData = accessibleDstAry[indexPath.row].components(separatedBy: ",")
     }
     
-    // セグエが"toDstDetailSegue"の時、DstDetailViewControllerの変数received に選択されたデータを代入
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDstDetailSegue" {
             let dstDetailVC = segue.destination as! DstDetailViewController

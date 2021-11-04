@@ -26,13 +26,11 @@ class ExitViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
  
     }
-    
-    // 選択されたセルのデータを配列にして代入
+
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         selectedCellData = csvAry[indexPath.row].components(separatedBy: ",")
     }
     
-    // セグエが"toAccessibleDstSegue"の時、AccessibleDstViewControllerの変数received に選択されたデータを代入
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAccessibleDstSegue" {
             let accessibleDstVC = segue.destination as! AccessibleDstViewController

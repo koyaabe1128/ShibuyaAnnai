@@ -38,17 +38,13 @@ class DstDetailViewController: UIViewController {
             }
         }
         
-        // タイトル
         dstName.text = dstDetail[0]
         
-        // 目的地の画像
         let image = UIImage(named: dstDetail[0])
         dstImage.image = image
         
-        // 目的地名
         dstName2.text = dstDetail[0]
         
-        // 目的地に近い出口名
         dstExit.text = dstDetail[1]
         
         backButton.layer.cornerRadius = 25
@@ -60,6 +56,5 @@ class DstDetailViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
         
     }
-    
-    
+
 }
